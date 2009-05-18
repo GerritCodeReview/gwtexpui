@@ -30,4 +30,6 @@ public interface KeyConstants extends Constants {
   String keyMeta();
   String keyEnter();
   String keyEsc();
+  String keyPageUp();
+  String keyPageDown();
 }

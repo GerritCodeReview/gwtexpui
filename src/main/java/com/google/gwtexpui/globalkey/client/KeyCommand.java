@@ -68,6 +68,12 @@ public abstract class KeyCommand implements KeyPressHandler {
       case KeyCodes.KEY_ESCAPE:
         namedKey(b, Util.C.keyEsc());
         break;
+      case KeyCodes.KEY_PAGEDOWN:
+        namedKey(b, Util.C.keyPageDown());
+        break;
+      case KeyCodes.KEY_PAGEUP:
+        namedKey(b, Util.C.keyPageUp());
+        break;
       default:
         b.openSpan();
         b.setStyleName(KS);
