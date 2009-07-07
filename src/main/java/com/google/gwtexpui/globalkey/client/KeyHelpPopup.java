@@ -32,7 +32,7 @@ import com.google.gwtexpui.user.client.PluginSafePopupPanel;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 
@@ -101,12 +101,19 @@ public class KeyHelpPopup extends PluginSafePopupPanel implements
   }
 
   private void populate(final Grid lists) {
-    final Iterator<KeyCommandSet> setitr =
-        GlobalKey.active.all.getSets().iterator();
+    final LinkedHashMap<String, KeyCommandSet> byName =
+        new LinkedHashMap<String, KeyCommandSet>();
+    for (final KeyCommandSet set : GlobalKey.active.all.getSets()) {
+      KeyCommandSet v = byName.get(set.getName());
+      if (v == null) {
+        v = new KeyCommandSet(set.getName());
+        byName.put(v.getName(), v);
+      }
+      v.add(set);
+    }
     int end[] = new int[5];
     int column = 0;
-    while (setitr.hasNext()) {
-      final KeyCommandSet set = setitr.next();
+    for (final KeyCommandSet set : byName.values()) {
       int row = end[column];
       row = formatGroup(lists, row, column, set);
       end[column] = row;
