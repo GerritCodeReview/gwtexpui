@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAan///6s\u003d",
+        "filename": "src/main/java/com/google/gwtexpui/globalkey/client/KeyHelpPopup.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1002059
+      },
+      "writtenOn": "2009-07-09T04:13:50Z",
+      "side": 1,
+      "message": "Just curious: not using the interface on purpose here?  (we do this occasionally in Android for performance reasons)",
+      "revId": "e4b69ec5e1164ba6e6966c6a31fe4c5020fb0d0b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAan///6o\u003d",
+        "filename": "src/main/java/com/google/gwtexpui/globalkey/client/KeyHelpPopup.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1002059
+      },
+      "writtenOn": "2009-07-09T04:13:50Z",
+      "side": 1,
+      "message": "Can you add a comment to explain what this loop does?  (the name of the method is not very explicit)",
+      "revId": "e4b69ec5e1164ba6e6966c6a31fe4c5020fb0d0b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
