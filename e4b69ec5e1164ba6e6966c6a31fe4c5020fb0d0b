@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "AAAAan///34\u003d",
+        "filename": "src/main/java/com/google/gwtexpui/globalkey/client/KeyHelpPopup.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2009-07-10T15:46:01Z",
+      "side": 1,
+      "message": "Laziness.  In a block of code this short, allocated type vs. interface type makes no difference.  Even if we had used Map\u003cK,V\u003e here a good static compiler should be able to reason out that this is really LinkedHashMap\u003cK,V\u003e because the local variable is final.  I happened to have it on my clipboard or something so I used it on both sides.\n\nI do tend to also do that sort of thing when I really want to make it clear that this is a LinkedHashMap, vs. say an arbitrary Map (which could be a normal HashMap) or a SortedMap (which could be a TreeMap), as the iteration order of the entries is more significant here.\n\nAnyway, it basically boils down to \"no good reason\", and we both just wasted way more time asking why I did this and what the justification is than if I could have just read your mind and done what you expected in the first place... which clearly wasn\u0027t what I thought was the easiest thing for me at the time that I wrote this code.  Let me know when you have the Code Reviewer Mind Reading Feature implemented in Gerrit Super Extreme Code Review Professional Edition 2102.  I could use it.  :-)",
+      "revId": "e4b69ec5e1164ba6e6966c6a31fe4c5020fb0d0b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAAAan///6o\u003d",
         "filename": "src/main/java/com/google/gwtexpui/globalkey/client/KeyHelpPopup.java",
         "patchSetId": 1
@@ -30,6 +47,23 @@
       "writtenOn": "2009-07-09T04:13:50Z",
       "side": 1,
       "message": "Can you add a comment to explain what this loop does?  (the name of the method is not very explicit)",
+      "revId": "e4b69ec5e1164ba6e6966c6a31fe4c5020fb0d0b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAan///30\u003d",
+        "filename": "src/main/java/com/google/gwtexpui/globalkey/client/KeyHelpPopup.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2009-07-10T15:46:01Z",
+      "side": 1,
+      "message": "Good point, actually I pulled this into a new method in ps2, between the method name and its javadoc it should be clear.  This never should have been a block in the method given that we only cared about the byName.values() return value.",
       "revId": "e4b69ec5e1164ba6e6966c6a31fe4c5020fb0d0b",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
