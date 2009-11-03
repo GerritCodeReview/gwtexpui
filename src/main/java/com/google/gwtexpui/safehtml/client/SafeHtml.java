@@ -22,8 +22,12 @@ import com.google.gwt.user.client.ui.HasHTML;
 import com.google.gwt.user.client.ui.InlineHTML;
 import com.google.gwt.user.client.ui.Widget;
 
+import java.util.List;
+
 /** Immutable string safely placed as HTML without further escaping. */
 public abstract class SafeHtml {
+  private List<RegexFindReplace> findReplaceList;
+
   /** @return the existing HTML property of a widget. */
   public static SafeHtml get(final HasHTML t) {
     return new SafeHtmlString(t.getHTML());
@@ -66,6 +70,26 @@ public abstract class SafeHtml {
   /** Parse an HTML block and return the first (typically root) element. */
   public static Element parse(final SafeHtml str) {
     return DOM.getFirstChild(set(DOM.createDiv(), str));
+  }
+
+  /** Set the list of strings to use for {@link #runFindReplaceList()} */
+  public void setFindReplaceList(List<RegexFindReplace> list) {
+    findReplaceList = list;
+  }
+
+  /**
+   * Go through the {@link RegexFindReplace} list, calling {@link #replaceAll()}
+   * on the HTML string for every find/replace pair in the list.
+   */
+  public SafeHtml runFindReplaceList() {
+    if (findReplaceList == null) {
+      return this;
+    }
+    String html = this.asString();
+    for (RegexFindReplace findReplace : findReplaceList) {
+      html = html.replaceAll(findReplace.find(), findReplace.replace());
+    }
+    return new SafeHtmlString(html);
   }
 
   /** Convert bare http:// and https:// URLs into &lt;a href&gt; tags. */
