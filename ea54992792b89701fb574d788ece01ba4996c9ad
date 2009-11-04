@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAAo3///68\u003d",
+        "filename": "src/main/java/com/google/gwtexpui/safehtml/client/RegexFindReplace.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2009-11-04T03:15:44Z",
+      "side": 1,
+      "message": "Adding a toString for debugging might be useful.",
+      "revId": "ea54992792b89701fb574d788ece01ba4996c9ad",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAo3///64\u003d",
+        "filename": "src/main/java/com/google/gwtexpui/safehtml/client/SafeHtml.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 177,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2009-11-04T03:15:44Z",
+      "side": 1,
+      "message": "Style-nit: unnecessary trailing whitespace.",
+      "revId": "ea54992792b89701fb574d788ece01ba4996c9ad",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
