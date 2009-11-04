@@ -33,6 +33,23 @@
       "revId": "ea54992792b89701fb574d788ece01ba4996c9ad",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAAo3///6w\u003d",
+        "filename": "src/main/java/com/google/gwtexpui/safehtml/client/SafeHtml.java",
+        "patchSetId": 4
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1000253
+      },
+      "writtenOn": "2009-11-04T03:20:29Z",
+      "side": 1,
+      "message": "I\u0027m really tempted to change this to\n\n public SafeHtml replaceAll(final String[] regex, final String[] repl)\n\nto match the API of the original replaceAll(), but the hassle of making sure the parameters are the same length, in the right order, etc makes the object approach work out better imo.  Stop me if you disagree.",
+      "revId": "ea54992792b89701fb574d788ece01ba4996c9ad",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
