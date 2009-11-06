@@ -50,6 +50,25 @@ public class SafeHtml_ReplaceTest extends TestCase {
     , n.asString());
   }
 
+  public void testReplaceInOrder2() {
+    final RegexFindReplace[] repl = {//
+            new RegexFindReplace("(gwtexpui\\s+issue\\s+(\\d+))",
+                "<a href=\"gwtexpui-bug?$2\">$1</a>"), //
+            new RegexFindReplace("(issue\\s+(\\d+))",
+                "<a href=\"generic-bug?$2\">$1</a>"), //
+        };
+    final SafeHtml o =
+        html("A\nissue 42\nReally gwtexpui issue 9918 is better\nB");
+    final SafeHtml n = o.replaceAll(Arrays.asList(repl));
+    assertNotSame(o, n);
+    assertEquals("A\n" //
+        + "<a href=\"generic-bug?42\">issue 42</a>\n" //
+        + "Really <a href=\"gwtexpui-bug?9918\">gwtexpui issue 9918</a>" //
+        + " is better\n" //
+        + "B" //
+    , n.asString());
+  }
+
   private static SafeHtml html(String text) {
     return new SafeHtmlBuilder().append(text).toSafeHtml();
   }
