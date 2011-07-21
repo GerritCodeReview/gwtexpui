@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAABEX//74I\u003d",
+        "filename": "src/main/java/com/google/gwtexpui/safehtml/client/SafeHtml.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1003873
+      },
+      "writtenOn": "2011-07-21T07:07:55Z",
+      "side": 1,
+      "message": "The reason for having to escape the \"-\" is that it is inside a character class expression where it is used to express a range.\n\nYou may want to add this explanation to the commit message.",
+      "revId": "e459fa24f00fce11def37fe312fa875449febe86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
