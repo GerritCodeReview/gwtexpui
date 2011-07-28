@@ -132,7 +132,10 @@ public abstract class SafeHtml {
   public SafeHtml wikify() {
     final SafeHtmlBuilder r = new SafeHtmlBuilder();
     for (final String p : linkify().asString().split("\n\n")) {
-      if (isPreFormat(p)) {
+      if (isList(p)) {
+        wikifyList(r, p);
+
+      } else if (isPreFormat(p)) {
         r.openElement("p");
         for (final String line : p.split("\n")) {
           r.openSpan();
@@ -142,9 +145,6 @@ public abstract class SafeHtml {
           r.br();
         }
         r.closeElement("p");
-
-      } else if (isList(p)) {
-        wikifyList(r, p);
 
       } else {
         r.openElement("p");

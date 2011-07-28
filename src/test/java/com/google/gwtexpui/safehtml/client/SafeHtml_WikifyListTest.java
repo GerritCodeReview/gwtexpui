@@ -127,6 +127,18 @@ public class SafeHtml_WikifyListTest extends TestCase {
     , n.asString());
   }
 
+  public void testDashListWrapped1() {
+    final SafeHtml o = html("- line 1\n-line 2\n  wrapped");
+    final SafeHtml n = o.wikify();
+    assertNotSame(o,n);
+    assertEquals(BEGIN_LIST
+        + item("line 1")
+        + item("line 2 wrapped")
+        + END_LIST
+    , n.asString());
+
+  }
+
   private static SafeHtml html(String text) {
     return new SafeHtmlBuilder().append(text).toSafeHtml();
   }
