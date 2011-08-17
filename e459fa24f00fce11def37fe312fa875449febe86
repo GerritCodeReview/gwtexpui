@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "AAABEn//7N8\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1003873
+      },
+      "writtenOn": "2011-08-17T13:12:42Z",
+      "side": 1,
+      "message": "s/linkfy/linkify",
+      "revId": "e459fa24f00fce11def37fe312fa875449febe86",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "AAABEX//74I\u003d",
         "filename": "src/main/java/com/google/gwtexpui/safehtml/client/SafeHtml.java",
         "patchSetId": 1
