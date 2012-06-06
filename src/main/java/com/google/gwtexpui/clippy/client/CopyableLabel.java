@@ -131,7 +131,7 @@ public class CopyableLabel extends Composite implements HasText {
       final String flashVars = "text=" + URL.encodeQueryString(getText());
       final SafeHtmlBuilder h = new SafeHtmlBuilder();
 
-      h.openElement("span");
+      h.openElement("div");
       h.setStyleName(ClippyResources.I.css().control());
 
       h.openElement("object");
