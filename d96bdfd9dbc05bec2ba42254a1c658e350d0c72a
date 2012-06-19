@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAAGwn///1U\u003d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2012-06-19T23:53:13Z",
+      "side": 1,
+      "message": "Did you accidentally clip your full name in Git?",
+      "revId": "d96bdfd9dbc05bec2ba42254a1c658e350d0c72a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAAGwn///1Y\u003d",
+        "filename": "src/test/java/com/google/gwtexpui/safehtml/client/SafeHtml_WikifyListTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 131,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2012-06-19T23:53:13Z",
+      "side": 1,
+      "message": "This test fails. The output is including a 3rd li tag:\n\n  \u003cul class\u003d\"wikiList\"\u003e\u003cli\u003eline 1\u003c/li\u003e\u003cli\u003eline 2\u003c/li\u003e\u003cli\u003e  wrapped\u003c/li\u003e\u003c/ul\u003e",
+      "revId": "d96bdfd9dbc05bec2ba42254a1c658e350d0c72a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
