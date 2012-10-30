@@ -29,11 +29,23 @@ import com.google.gwt.user.client.ui.Widget;
  */
 public abstract class View extends Composite {
   ViewSite<? extends View> site;
+  ViewSite<? extends View> prevSite;
 
   @Override
   protected void onUnload() {
+    // If the view was removed from a widget, but will be added back again, we
+    // don't want to forget the site.
+    prevSite = site;
     site = null;
     super.onUnload();
+  }
+
+  @Override
+  protected void onLoad() {
+    super.onLoad();
+    if (site == null) {
+      site = prevSite;
+    }
   }
 
   /** true if this is the current view of its parent view site */
