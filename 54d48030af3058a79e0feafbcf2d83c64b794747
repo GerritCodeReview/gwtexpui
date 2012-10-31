@@ -34,6 +34,24 @@
       "revId": "54d48030af3058a79e0feafbcf2d83c64b794747",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAALLH///+Q\u003d",
+        "filename": "src/main/java/com/google/gwtexpui/safehtml/client/HighlightSuggestOracle.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1011547
+      },
+      "writtenOn": "2012-10-31T03:54:41Z",
+      "side": 1,
+      "message": "I get it. Yes, it would be nice to have a mention to that in the commit message.",
+      "parentUuid": "AAALLH///+Y\u003d",
+      "revId": "54d48030af3058a79e0feafbcf2d83c64b794747",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
