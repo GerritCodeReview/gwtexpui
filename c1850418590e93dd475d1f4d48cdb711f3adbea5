@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "AAALLX///+M\u003d",
+        "filename": "src/main/java/com/google/gwtexpui/user/client/View.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2012-10-31T21:06:03Z",
+      "side": 1,
+      "message": "I wonder if its just simpler to remove the onUnload method entirely.\n\nI had this null in here to unlink from the View, to prevent two DOM elements from being linked in a cycle with one another and unable to GC in the browser. Keeping the prior using prevSite defeats that.",
+      "revId": "c1850418590e93dd475d1f4d48cdb711f3adbea5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
