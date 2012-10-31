@@ -52,6 +52,24 @@
       "revId": "54d48030af3058a79e0feafbcf2d83c64b794747",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "AAALNH////o\u003d",
+        "filename": "src/main/java/com/google/gwtexpui/safehtml/client/HighlightSuggestOracle.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1003935
+      },
+      "writtenOn": "2012-10-31T06:23:05Z",
+      "side": 1,
+      "message": "Yes, the intend is to allow subclasses to overwrite this method. I\u0027ve updated the commit message to explain this. [1] is making use of this to fix the highlighting for the suggestions in the search panel.\n\n[1] https://gerrit-review.googlesource.com/38970",
+      "parentUuid": "AAALLH///+Q\u003d",
+      "revId": "54d48030af3058a79e0feafbcf2d83c64b794747",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
