@@ -34,6 +34,24 @@
       "revId": "d207302ae62c91871370d7a93365577d9f3966d2",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "S8HKtGME",
+        "filename": "src/main/java/com/google/gwtexpui/safehtml/client/LinkFindReplace.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1010008
+      },
+      "writtenOn": "2013-04-04T22:47:54Z",
+      "side": 1,
+      "message": "Done, PTAL. Had to reorder this and the previous change (which were actually pretty orthogonal other than renaming RegexFindReplace).",
+      "parentUuid": "S8FKwFBg",
+      "revId": "d207302ae62c91871370d7a93365577d9f3966d2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
