@@ -111,9 +111,9 @@ public abstract class SafeHtml {
   /** Convert bare http:// and https:// URLs into &lt;a href&gt; tags. */
   public SafeHtml linkify() {
     final String part = "(?:" +
-		"[a-zA-Z0-9$_.+!*',%;:@=?#/~-]" +
-		"|&(?!lt;|gt;)" +
-		")";
+    "[a-zA-Z0-9$_.+!*',%;:@=?#/~-]" +
+    "|&(?!lt;|gt;)" +
+    ")";
     return replaceAll(
         "(https?://" +
           part + "{2,}" +
@@ -238,16 +238,16 @@ public abstract class SafeHtml {
   }
 
   /**
-   * Go through the {@link RegexFindReplace} list, calling
+   * Go through the {@link RawFindReplace} list, calling
    * {@link #replaceAll(String,String)} on the HTML string for every
    * find/replace pair in the list.
    */
-  public SafeHtml replaceAll(final List<RegexFindReplace> findReplaceList) {
+  public SafeHtml replaceAll(List<? extends FindReplace> findReplaceList) {
     if (findReplaceList == null) {
       return this;
     }
     String html = this.asString();
-    for (RegexFindReplace findReplace : findReplaceList) {
+    for (FindReplace findReplace : findReplaceList) {
       html = html.replaceAll(findReplace.find(), findReplace.replace());
     }
     return new SafeHtmlString(html);

@@ -14,29 +14,15 @@
 
 package com.google.gwtexpui.safehtml.client;
 
-/** A Find/Replace pair used against the SafeHtml block of text */
-public class RegexFindReplace {
-  private String find;
-  private String replace;
+import junit.framework.TestCase;
 
-  protected RegexFindReplace() {
-  }
-
-  public RegexFindReplace(final String find, final String replace) {
-    this.find = find;
-    this.replace = replace;
-  }
-
-  public String find() {
-    return find;
-  }
-
-  public String replace() {
-    return replace;
-  }
-
-  @Override
-  public String toString() {
-    return "find = " + find + ", replace = " + replace;
+public class RawFindReplaceTest extends TestCase {
+  public void testFindReplace() {
+    final String find = "find";
+    final String replace = "replace";
+    final RawFindReplace a = new RawFindReplace(find, replace);
+    assertSame(find, a.find());
+    assertSame(replace, a.replace());
+    assertEquals("find = " + find + ", replace = " + replace, a.toString());
   }
 }
