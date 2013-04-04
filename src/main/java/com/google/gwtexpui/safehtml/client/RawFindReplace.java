@@ -14,15 +14,31 @@
 
 package com.google.gwtexpui.safehtml.client;
 
-import junit.framework.TestCase;
+/** A Find/Replace pair whose replacement string is arbitrary HTML. */
+public class RawFindReplace implements FindReplace {
+  private String find;
+  private String replace;
 
-public class RegexFindReplaceTest extends TestCase {
-  public void testCreate() {
-    final String find = "find";
-    final String replace = "replace";
-    final RegexFindReplace a = new RegexFindReplace(find, replace);
-    assertSame(find, a.find());
-    assertSame(replace, a.replace());
-    assertEquals("find = " + find + ", replace = " + replace, a.toString());
+  protected RawFindReplace() {
+  }
+
+  public RawFindReplace(String find, String replace) {
+    this.find = find;
+    this.replace = replace;
+  }
+
+  @Override
+  public String find() {
+    return find;
+  }
+
+  @Override
+  public String replace() {
+    return replace;
+  }
+
+  @Override
+  public String toString() {
+    return "find = " + find + ", replace = " + replace;
   }
 }

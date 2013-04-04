@@ -20,8 +20,8 @@ import java.util.Arrays;
 
 public class SafeHtml_ReplaceTest extends TestCase {
   public void testReplaceTwoLinks() {
-    final RegexFindReplace[] repl = {//
-        new RegexFindReplace("(issue\\s(\\d+))", "<a href=\"?$2\">$1</a>") //
+    final RawFindReplace[] repl = {//
+        new RawFindReplace("(issue\\s(\\d+))", "<a href=\"?$2\">$1</a>") //
         };
     final SafeHtml o = html("A\nissue 42\nissue 9918\nB");
     final SafeHtml n = o.replaceAll(Arrays.asList(repl));
@@ -34,10 +34,10 @@ public class SafeHtml_ReplaceTest extends TestCase {
   }
 
   public void testReplaceInOrder1() {
-    final RegexFindReplace[] repl = {//
-            new RegexFindReplace("(GWTEXPUI-(\\d+))",
+    final RawFindReplace[] repl = {//
+            new RawFindReplace("(GWTEXPUI-(\\d+))",
                 "<a href=\"gwtexpui-bug?$2\">$1</a>"), //
-            new RegexFindReplace("(issue\\s+(\\d+))",
+            new RawFindReplace("(issue\\s+(\\d+))",
                 "<a href=\"generic-bug?$2\">$1</a>"), //
         };
     final SafeHtml o = html("A\nissue 42\nReally GWTEXPUI-9918 is better\nB");
