@@ -16,6 +16,24 @@
       "revId": "a55bf10670c8ff186e8fa7158d00fecbf413c78f",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "S8PIzyM0",
+        "filename": "src/main/java/com/google/gwtexpui/safehtml/client/SafeHtml.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 267,
+      "author": {
+        "id": 1010008
+      },
+      "writtenOn": "2013-04-04T23:50:40Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "S7XUJaOE",
+      "revId": "a55bf10670c8ff186e8fa7158d00fecbf413c78f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
