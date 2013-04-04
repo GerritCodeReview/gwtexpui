@@ -25,7 +25,6 @@ import com.google.gwt.user.client.ui.HasHTML;
 import com.google.gwt.user.client.ui.InlineHTML;
 import com.google.gwt.user.client.ui.Widget;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /** Immutable string safely placed as HTML without further escaping. */
@@ -114,9 +113,9 @@ public abstract class SafeHtml {
   /** Convert bare http:// and https:// URLs into &lt;a href&gt; tags. */
   public SafeHtml linkify() {
     final String part = "(?:" +
-		"[a-zA-Z0-9$_.+!*',%;:@=?#/~-]" +
-		"|&(?!lt;|gt;)" +
-		")";
+    "[a-zA-Z0-9$_.+!*',%;:@=?#/~-]" +
+    "|&(?!lt;|gt;)" +
+    ")";
     return replaceAll(
         "(https?://" +
           part + "{2,}" +
@@ -240,34 +239,21 @@ public abstract class SafeHtml {
     return new SafeHtmlString(asString().replaceAll(regex, repl));
   }
 
-  private static class RegExpReplacement {
-    private final RegExp re;
-    private final String repl;
-
-    private RegExpReplacement(String pat, String repl) {
-      this.re = RegExp.compile(pat);
-      this.repl = repl;
-    }
-  }
-
   /**
    * Replace all find/replace pairs in the list in a single pass.
    *
    * @param findReplaceList find/replace pairs to use.
    * @return a new string, after the replacements have been made.
    */
-  public SafeHtml replaceAll(final List<RegexFindReplace> findReplaceList) {
+  public SafeHtml replaceAll(List<? extends FindReplace> findReplaceList) {
     if (findReplaceList == null) {
       return this;
     }
-    List<RegExpReplacement> repls =
-        new ArrayList<RegExpReplacement>(findReplaceList.size());
 
     StringBuilder pat = new StringBuilder();
     for (int i = 0; i < findReplaceList.size(); i++) {
-      RegexFindReplace fr = findReplaceList.get(i);
-      repls.add(new RegExpReplacement(fr.find(), fr.replace()));
-      pat.append(fr.find());
+      FindReplace fr = findReplaceList.get(i);
+      pat.append(fr.pattern().getSource());
       if (i != findReplaceList.size() - 1) {
         pat.append('|');
       }
@@ -281,10 +267,15 @@ public abstract class SafeHtml {
     while ((mat = re.exec(orig)) != null) {
       String g = mat.getGroup(0);
       // Re-run each candidate to find which one matched.
-      for (RegExpReplacement repl : repls) {
-        if (repl.re.exec(g) != null) {
-          result.append(orig.substring(index, mat.getIndex()));
-          result.append(repl.re.replace(g, repl.repl));
+      for (FindReplace fr : findReplaceList) {
+        if (fr.pattern().test(g)) {
+          try {
+            String repl = fr.replace(g);
+            result.append(orig.substring(index, mat.getIndex()));
+            result.append(repl);
+          } catch (IllegalArgumentException e) {
+            continue;
+          }
           index = mat.getIndex() + g.length();
           break;
         }
