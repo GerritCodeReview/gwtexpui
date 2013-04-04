@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "S7ZUdJCU",
+        "filename": "src/main/java/com/google/gwtexpui/safehtml/client/LinkFindReplace.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-04-04T21:41:04Z",
+      "side": 1,
+      "message": "So you escape the link text, but you insert the regex as is. If the evil user can control the regex they can inject HTML.\n\nWhat about when the user writes:\n\n  LinkFindReplace(\"(javascript:[^;]*)\", \"$1\")\n\nabove you say this is a valid scheme since it does not contain :, but we now insert an anchor that executes the javascript that was matched from the input. That doesn\u0027t make a lot of sense.\n\nThis is really hard because you are inserting arbitrary text that matches the regex pattern\u0027s capture groups into the raw HTML.",
+      "revId": "d207302ae62c91871370d7a93365577d9f3966d2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
