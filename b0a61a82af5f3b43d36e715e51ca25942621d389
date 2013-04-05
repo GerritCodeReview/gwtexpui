@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "S7dXKPGs",
+        "filename": "src/main/java/com/google/gwtexpui/safehtml/client/SafeHtml.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-04-05T00:03:03Z",
+      "side": 1,
+      "message": "bad rebase",
+      "revId": "b0a61a82af5f3b43d36e715e51ca25942621d389",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
