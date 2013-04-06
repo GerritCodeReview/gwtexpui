@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "TC3fsMEw",
+        "filename": ".settings/org.eclipse.core.resources.prefs",
+        "patchSetId": 6
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1001240
+      },
+      "writtenOn": "2013-04-06T00:25:44Z",
+      "side": 1,
+      "message": "Can we fix these in a different change?",
+      "revId": "bd240d4d6252d1b50370b2cb0edf3b568f1b569d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
